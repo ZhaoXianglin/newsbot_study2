@@ -9,7 +9,7 @@
       <van-step>Step5</van-step>
     </van-steps>
     <van-form @submit="onSubmit" scroll-to-error @failed="onFailed" validate-trigger="onSubmit">
-      <van-image src="https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/study2.png"></van-image>
+      <van-image src="https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/Slice.png"></van-image>
       <van-field :rules="[{ required: auth, message: 'required' }]" name="feedback1">
         <template #input>
           <van-row style="width: 100%;">
