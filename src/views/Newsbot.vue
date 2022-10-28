@@ -128,14 +128,14 @@ export default {
         value: this.current_news.title
       }
       this.current_news_qabutton = this.current_news['buttons']
-      this.bot("Hi! This is NewsBot.").then(() => {
+      this.bot("Hi! This is <b>NewsBot</b>.").then(() => {
         return this.bot("Here's your feed of today's top story about health.")
       }).then(() => {
-        return this.bot("Please tap the 'news title' to read the details.")
+        return this.bot(`Please tap the <b> "Read"</b> button to read this news story.`)
       }).then(() => {
         botui.action.button({
           addMessage: true,
-          action: [this.current_news_button]
+          action: [{'text': 'Read', value: "Read"}]
         }).then(() => {
           this.addTimeLog();
           switch (this.interface_id) {
@@ -143,21 +143,7 @@ export default {
               this.show_news_dialog = true;
               break;
             case '2':
-              botui.message.bot({
-                loading: true,
-                delay: 1000,
-                type: 'newscontent',
-                content: this.current_news
-              }).then(() => {
-                botui.action.button(
-                    {
-                      addMessage: false,
-                      action: [{"text": 'Read', value: 'Read'}]
-                    }).then(() => {
-                  this.addTimeLog()
-                  this.bot_next()
-                })
-              });
+              this.reading2_init()
               break;
             case '3':
               botui.message.bot({
@@ -172,7 +158,7 @@ export default {
         })
       });
     },
-    evaluation: function (){
+    evaluation: function () {
       this.addTimeLog();
       localStorage.setItem('timeLog', JSON.stringify(this.time_log))
       this.$router.replace('/evaluate').catch((err) => {
@@ -266,6 +252,22 @@ export default {
         })
       })
     },
+
+    reading2_init: function () {
+      this.bot(`The news title is: <b>${this.current_news.title}.</b>`).then(() => {
+        return botui.message.bot({
+          type: 'image',
+          content: this.current_news
+        })
+      }).then(() => {
+        return this.bot(`It is reported by <b>${this.current_news.author}</b> on <b>${this.current_news.publish_date}</b>`)
+      }).then(() => {
+        return this.bot(`This story is about: <b>${this.current_news.summary}</b>.`)
+      }).then(()=>{
+        this.addTimeLog()
+        this.bot_next()
+      })
+    }
   }
 }
 </script>

@@ -52,7 +52,7 @@ export default {
         {q: "The news reading style of this news chatbot is easy to use.", t: "ease_to_use"},
         {q:"The news reading style of this news chatbot is flexible.",t: 'user_friendliness2'},
         {q: "I am satisfied with this reading experience in this news chatbot.", t: "satisfaction"},
-        {q: "I find using this news chatbot to be enjoyable.", t: "enjoyment"},
+        {q: "I find reading news articles with this news chatbot to be enjoyable.", t: "enjoyment"},
       ],
       q1groupans: Array(7).fill(null),
     }

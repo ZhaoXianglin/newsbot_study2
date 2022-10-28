@@ -50,7 +50,7 @@
           <van-row style="width: 100%;">
             <van-row type="flex">
               <van-col span="24"><span
-                  style="font-weight:600">3. Which of the following statements best describes your news reading behaviours? </span>
+                  style="font-weight:600">3. Which of the following statements better describes your news reading behaviours? </span>
               </van-col>
               <van-col span="24">
                 <van-radio-group v-model="feedback3" class="item_span">
@@ -61,10 +61,7 @@
                     I am a person who likes to catch up on <b>the day’s news and a variety of topics</b> and usually reads the news <b>once a day</b>, spending <b>more than 10 minutes</b> to get through all the stories of interest. And I like an in-depth analysis of the stories and will <b>read at length to fully understand the story</b> (i.e. a detailed reading).
                   </van-radio>
                   <van-radio name="Dipper" checked-color="#ee0a24" class="item">
-                    I am a person with a <b>casual interest in the news</b> but likes to read news on <b>specific topics</b> such as sport. I always know what I am looking for so does not <b>spend more than 5 minutes</b> accessing the news. I like to browse particular sections to find stories and looks for <b>specific facts or pieces of information without reading everything.</b> (i.e. reading by scanning).
-                  </van-radio>
-                  <van-radio name="Other" checked-color="#ee0a24" class="item">
-                    <b>None of the above.</b>
+                    I am a person with a <b>casual interest in the news</b> but likes to read news on <b>specific topics</b> such as sport. I always know what I am looking for so do not <b>spend more than 5 minutes</b> accessing the news. I like to browse particular sections to find stories and looks for <b>specific facts or pieces of information without reading everything.</b> (i.e. reading by scanning).
                   </van-radio>
                 </van-radio-group>
               </van-col>

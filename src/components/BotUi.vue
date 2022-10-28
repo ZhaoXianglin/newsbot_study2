@@ -15,6 +15,7 @@
             <CardCarousel v-if="msg.type==='cardlist'" :newslist="msg.content" @news_id="click_detail"></CardCarousel>
             <NewsList v-if="msg.type==='list'" :newslist="msg.content" @news_id="click_detail"></NewsList>
             <NewsContent v-if="msg.type==='newscontent'" :news="msg.content"></NewsContent>
+            <NewsImage v-if="msg.type==='image'" :news="msg.content"></NewsImage>
 
             <div :class="[{human: msg.human, 'botui-message-content': true}, msg.type]"
                  v-if="['text','html','embed'].includes(msg.type)">
@@ -127,6 +128,7 @@ import NewsCard from "@/components/NewsCard";
 import CardCarousel from "@/components/CardCarousel";
 import NewsList from "@/components/NewsList";
 import NewsContent from "@/components/NewsContent";
+import NewsImage from "@/components/NewsImage";
 
 var _instance, // current vue instance.
     _options = {
@@ -183,7 +185,7 @@ function _handleAction(text) {
 
 export default {
   name: 'BotUi',
-  components: {NewsList, CardCarousel, NewsCard, NewsContent},
+  components: {NewsImage, NewsList, CardCarousel, NewsCard, NewsContent},
   data: function () {
     return {
       action: {

@@ -23,7 +23,7 @@
           :wrapper="'h2'"
       ></typical>
       <div style="width: 90%;margin:10px auto;padding:1em;border:1px solid silver;border-radius:12px;font-weight: bolder;" v-animate-css.once="animationInfinite1">
-        <p style="font-size:1.2em; text-align: left">You will experience three interfaces to read news stories. After each interface, you will answer several questions to provide your evaluation of the interface.</p>
+        <p style="font-size:1.2em; text-align: left">You will experience three interfaces to read news stories. After each interface, you will answer several questions to provide your feedback on this interface.</p>
       </div>
       <typical
           class="typicalWrapper"
