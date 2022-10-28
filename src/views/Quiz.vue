@@ -46,7 +46,7 @@ export default {
       auth: true,
       q1group: [
         {q: "The layout of this news chatbot makes reading news easy.", t: "ease_of_reading"},
-        {q: "The reading style of this news chatbot is user-friendly.", t: "user_friendliness1"},
+        {q: "The news reading style of this news chatbot is user-friendly.", t: "user_friendliness1"},
         {q: "I intend to use this news chatbot in the future.", t: "intent_to_use"},
         {q: "I can operate this news chatbot for news reading easily.", t: "ease_of_operation"},
         {q: "The news reading style of this news chatbot is easy to use.", t: "ease_to_use"},

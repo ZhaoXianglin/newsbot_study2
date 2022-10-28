@@ -69,14 +69,14 @@
           </van-row>
         </template>
       </van-field>
-      <p style="padding:0 10px;font-weight:bold;text-align: left">4. Please provide your email.</p>
-      <van-field
-          ref="email"
-          v-model="email"
-          name="email"
-          label="E-mail"
-          :rules="[{ required: true }]"
-      />
+<!--      <p style="padding:0 10px;font-weight:bold;text-align: left">4. Please provide your email.</p>-->
+<!--      <van-field-->
+<!--          ref="email"-->
+<!--          v-model="email"-->
+<!--          name="email"-->
+<!--          label="E-mail"-->
+<!--          :rules="[{ required: true }]"-->
+<!--      />-->
       <div style="margin: 36px;">
         <van-button round block type="info" native-type="submit" :loading="loading">Submit</van-button>
       </div>
@@ -94,7 +94,7 @@ export default {
       feedback1: '',
       feedback2: '',
       feedback3: '',
-      email: '',
+      // email: '',
     }
   },
   methods: {
