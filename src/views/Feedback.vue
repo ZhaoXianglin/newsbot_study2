@@ -15,7 +15,7 @@
           <van-row style="width: 100%;">
             <van-row type="flex">
               <van-col span="24"><span
-                  style="font-weight:600">1. Which interface do you prefer regarding the selection of a news story?</span>
+                  style="font-weight:600">1. Which interface do you prefer regarding the reading of a news story?</span>
               </van-col>
               <van-col span="24">
                 <van-radio-group v-model="feedback1">
