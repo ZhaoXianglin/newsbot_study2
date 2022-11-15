@@ -22,12 +22,31 @@
           v-animate-css.once="animationInfinite0"
           :wrapper="'h2'"
       ></typical>
-      <div style="margin: 24px 16px;padding-bottom:48px">
-        <van-button round block v-animate-css.once="animationInfinite4" type="info"
-                    native-type="submit"
-                    :loading="loading" @click="next">Let's start！
-        </van-button>
+      <div v-animate-css.once="animationInfinite1">
+        <p style="text-align: left;font-weight: bold">Please select one of the following news stories that you may want to read.</p>
+        <van-radio-group v-model="news_id">
+          <van-cell-group>
+            <van-cell v-for="news in news_list" :key="news.id" :title="news.title" clickable @click="news_id = news.id">
+              <template #title>
+                <p style="text-align: left;font-weight: bolder;padding-right: 2px">
+                  <van-radio :name="news.id" style="display: inline-block"/>
+                  {{ news.title }}
+                </p>
+              </template>
+              <template #right-icon>
+                <van-image :src="news.top_image" width="48px" height="48px" fit="cover"
+                           style="margin: auto 0"></van-image>
+              </template>
+            </van-cell>
+          </van-cell-group>
+        </van-radio-group>
 
+      </div>
+
+      <div style="margin: 24px 16px;padding-bottom:48px;z-index: 100" v-animate-css.once="animationInfinite2">
+        <van-button round block type="info" native-type="submit" :loading="loading" :disabled="disabled" @click="next">
+          Let's start！
+        </van-button>
       </div>
     </div>
   </div>
@@ -36,6 +55,7 @@
 <script>
 import typical from "vue-typical";
 import {instance} from "@/request";
+import {news_stories} from "@/data/news";
 
 export default {
   name: "Step1",
@@ -46,6 +66,8 @@ export default {
     return {
       lang: localStorage.getItem("lang"),
       loading: false,
+      news_id: -1,
+      news_list: [],
       type_content_s: ['', 1500,
         'Awesome!', 500,
         'Please explore the next interface and compare it with the previous interface.', 1500,
@@ -58,13 +80,13 @@ export default {
       },
       animationInfinite1: {
         classes: 'fadeIn',
-        delay: 11000,
+        delay: 9000,
         duration: 1000,
         iteration: 1
       },
       animationInfinite2: {
         classes: 'fadeIn',
-        delay: 12000,
+        delay: 10000,
         duration: 1000,
         iteration: 1
       },
@@ -82,11 +104,20 @@ export default {
       },
     }
   },
-
+  computed: {
+    disabled: function () {
+      return this.news_id <= -1;
+    }
+  },
+  mounted() {
+    this.news_list = news_stories['group2']
+  },
   methods: {
     next: function () {
       this.loading = true;
       localStorage.setItem("session_id", 2);
+      localStorage.setItem("news_id", this.news_id);
+
       instance.post('/study2/session_pre', {
         'uuid': localStorage.getItem("uuid"),
         'session_id': 2,
