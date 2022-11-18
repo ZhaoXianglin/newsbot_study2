@@ -8,7 +8,7 @@
       />
       <h3>Thank you for completing this survey.</h3>
       Completion code:
-      <h3 style="padding: 10px;display:inline-block; background-color: #c8c9cc;border: 1px solid black">C14WQQP0</h3>
+      <h3 style="padding: 10px;display:inline-block; background-color: #c8c9cc;border: 1px solid black">CYY6NSN8</h3>
       <h3>Now you can close this page.</h3>
     </div>
 
