@@ -12,6 +12,15 @@ const pre_study_questions = {
         Big10: "… has an active imagination",
 
     },
+    nfc:{
+        nfc1:"I would prefer complex to simple problems",
+        nfc2: "I like to have the responsibility of handling a situation that requires a lot of thinking",
+        nfc3: "Thinking is not my idea of fun",
+        nfc4: "I would rather do something that requires little thought than something that is sure to challenge my thinking abilities",
+        nfc5: "I really enjoy a task that involves coming up with new solutions to problems",
+        nfc6: "I would prefer a task that is intellectual, difficult, and important to one that is somewhat important but does not require much thought"
+    },
+
     habit: {
         Disposition1: "I surf the net whenever I have the opportunity.",
         Disposition2: "If I can choose, I prefer digital media resources while studying in the library.",

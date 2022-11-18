@@ -82,13 +82,13 @@ export default {
       },
       animationInfinite1: {
         classes: 'fadeIn',
-        delay: 11000,
+        delay: 6000,
         duration: 1000,
         iteration: 1
       },
       animationInfinite2: {
         classes: 'fadeIn',
-        delay: 12000,
+        delay: 7000,
         duration: 1000,
         iteration: 1
       },
@@ -122,6 +122,7 @@ export default {
       instance.post('/study2/session_pre', {
         'uuid': localStorage.getItem("uuid"),
         'session_id': 3,
+        'sessionnews':this.news_id,
         'sessionST': new Date().getTime(),
       }).then((res) => {
         if (res.data.status === 1) {

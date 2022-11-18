@@ -133,6 +133,7 @@ export default {
       instance.post('/study2/session_pre', {
         'uuid': localStorage.getItem("uuid"),
         'session_id': 1,
+        'sessionnews':this.news_id,
         'sessionST': new Date().getTime(),
       }).then((res) => {
         if (res.data.status === 1) {

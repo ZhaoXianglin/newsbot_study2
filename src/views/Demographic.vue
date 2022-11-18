@@ -72,10 +72,10 @@
               <van-col span="24">
                 <van-radio-group v-model="q1groupans[0]">
                   <van-radio name="1" checked-color="#ee0a24" class="item">
-                    Many times
+                    Many times a day
                   </van-radio>
                   <van-radio name="2" checked-color="#ee0a24" class="item">
-                    Once
+                    Once a day
                   </van-radio>
                   <van-radio name="3" checked-color="#ee0a24" class="item">
                     Occasionally
@@ -96,13 +96,13 @@
               <van-col span="24">
                 <van-radio-group v-model="q1groupans[1]">
                   <van-radio name="1" checked-color="#ee0a24" class="item">
-                    0-5 min
+                    0-5 minutes
                   </van-radio>
                   <van-radio name="2" checked-color="#ee0a24" class="item">
-                    5-10 min
+                    5-10 minutes
                   </van-radio>
                   <van-radio name="3" checked-color="#ee0a24" class="item">
-                    10+ min
+                    10+ minutes
                   </van-radio>
                 </van-radio-group>
               </van-col>
@@ -120,13 +120,13 @@
               <van-col span="24">
                 <van-radio-group v-model="q1groupans[2]">
                   <van-radio name="1" checked-color="#ee0a24" class="item">
-                    All
+                    I only look through all sections
                   </van-radio>
                   <van-radio name="2" checked-color="#ee0a24" class="item">
-                    Particular
+                    I only look at particular sections
                   </van-radio>
                   <van-radio name="3" checked-color="#ee0a24" class="item">
-                    Both
+                    Both browsing strategies
                   </van-radio>
                 </van-radio-group>
               </van-col>
@@ -144,13 +144,13 @@
               <van-col span="24">
                 <van-radio-group v-model="q1groupans[3]">
                   <van-radio name="1" checked-color="#ee0a24" class="item">
-                    Detailed
+                    Detailed Reading (I read for comprehension)
                   </van-radio>
                   <van-radio name="2" checked-color="#ee0a24" class="item">
-                    Skimming
+                    Skimming (I prefer to get the gist of a story without reading everything)
                   </van-radio>
                   <van-radio name="3" checked-color="#ee0a24" class="item">
-                    Scanning
+                    Scanning (I look for specific facts or pieces of information)
                   </van-radio>
                 </van-radio-group>
               </van-col>
@@ -168,13 +168,13 @@
               <van-col span="24">
                 <van-radio-group v-model="q1groupans[4]">
                   <van-radio name="1" checked-color="#ee0a24" class="item">
-                    Home
+                    At Home
                   </van-radio>
                   <van-radio name="2" checked-color="#ee0a24" class="item">
-                    Work
+                    At Work
                   </van-radio>
                   <van-radio name="3" checked-color="#ee0a24" class="item">
-                    Public Transport
+                    On the go (public transport, bus, etc…)
                   </van-radio>
                 </van-radio-group>
               </van-col>
@@ -231,10 +231,9 @@
         </template>
       </van-field>
 
-      <p style="padding:0 10px;font-weight:bold;text-align: left">For each statement below, please indicate your
-        frequency of use.</p>
-      <p style="padding:0 10px;font-weight:normal; text-align: left;font-size: 14px">from (1) never, to (4) often</p>
-      <van-field v-for="(value, key,index) in media_use" :key="key" :name="key"
+      <p style="padding:0 10px;font-weight:bold;text-align: left">For each statement below, please indicate how much you agree..</p>
+      <p style="padding:0 10px;font-weight:normal; text-align: left;font-size: 14px">ranging from “extremely uncharacteristic of me” (1) to “extremely characteristic of me(5)” </p>
+      <van-field v-for="(value, key,index) in nfc" :key="key" :name="key"
                  :rules="[{ required: auth, message: 'required' }]">
         <template #input>
           <van-row style="width: 100%;">
@@ -242,15 +241,15 @@
               <van-col span="24"><span style="font-weight:600">{{ index + 1 }}. {{ value }}</span></van-col>
             </van-row>
             <van-row type="flex" align="center" justify="between">
-              <van-col span="4" class="score_left_s" style="text-align:right;">Never</van-col>
+              <van-col span="4" class="score_left_s" style="text-align:right;">extremely uncharacteristic of me</van-col>
               <van-col>
                 <van-radio-group v-model="q2groupans[index]" direction="horizontal" class="matrix_table">
-                  <van-radio :name="val" v-for="val in 4" :key="val" checked-color="#ee0a24" class="item">
+                  <van-radio :name="val" v-for="val in 5" :key="val" checked-color="#ee0a24" class="item">
                     {{ val }}
                   </van-radio>
                 </van-radio-group>
               </van-col>
-              <van-col span="4">Often</van-col>
+              <van-col span="4">extremely characteristic of me</van-col>
             </van-row>
           </van-row>
         </template>
@@ -283,40 +282,6 @@
         </template>
       </van-field>
 
-      <van-field :rules="[{ required: auth, message: 'required' }]" name="news_type">
-        <template #input>
-          <van-row style="width: 100%;">
-            <van-row type="flex">
-              <van-col span="24"><span
-                  style="font-weight:600">Please select one of the following news types that you would like to browse.</span>
-              </van-col>
-              <van-col span="24">
-                <van-radio-group v-model="news_type">
-                  <van-radio name="business" checked-color="#ee0a24" class="item">
-                    Business
-                  </van-radio>
-                  <van-radio name="entertainment" checked-color="#ee0a24" class="item">
-                    Entertainment
-                  </van-radio>
-                  <van-radio name="health" checked-color="#ee0a24" class="item">
-                    Health
-                  </van-radio>
-                  <van-radio name="science" checked-color="#ee0a24" class="item">
-                    Science
-                  </van-radio>
-                  <van-radio name="sports" checked-color="#ee0a24" class="item">
-                    Sports
-                  </van-radio>
-                  <van-radio name="technology" checked-color="#ee0a24" class="item">
-                    Technology
-                  </van-radio>
-                </van-radio-group>
-              </van-col>
-            </van-row>
-          </van-row>
-        </template>
-      </van-field>
-
       <div style="margin: 36px;">
         <van-button round block type="info" native-type="submit" :loading="loading">Continue</van-button>
       </div>
@@ -337,17 +302,16 @@ export default {
       gender: "",
       age: "",
       education: "",
-      news_type: "",
       age_items: ['18–21', '22–25', '26–30', '31–35', '36- 40', '41- 45', '46- 50', '51 and above'],
       education_items: ['High school graduate', 'Completed some college', 'Associate degree', 'Bachelor\'s degree', 'Completed some postgraduate', 'Master\'s degree', 'Ph.D., law or medical degree', 'Others'],
       showPicker1: false,
       showPicker2: false,
       //----demographic
       big5: pre_study_questions['big5'],
-      media_use: pre_study_questions['media_use'],
+      nfc: pre_study_questions['nfc'],
 
       q1groupans: Array(7).fill(null),
-      q2groupans: Array(3).fill(null),
+      q2groupans: Array(6).fill(null),
       q3groupans: Array(10).fill(null),
     }
   },
