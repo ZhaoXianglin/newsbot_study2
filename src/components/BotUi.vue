@@ -2,7 +2,7 @@
   <div class="botui botui-container" v-botui-container>
     <div class="botui-messages-container">
       <div v-for="(msg,index) in messages" :key="index" class="botui-message"
-           :class="msg.cssClass" v-botui-scroll v-bind="msg.attributes">
+           :class="msg.cssClass" v-bind="msg.attributes">
         <transition name="slide-fade">
           <div v-if="msg.visible">
             <div v-if="msg.photo && !msg.loading"
@@ -632,14 +632,6 @@ button.botui-actions-buttons-button {
   z-index: 1;
 }
 
-.chatbot-content {
-  position: absolute;
-  top: 46px;
-  bottom: 54px;
-  left: 0;
-  right: 0;
-  overflow: auto;
-}
 
 .help {
   box-sizing: border-box;

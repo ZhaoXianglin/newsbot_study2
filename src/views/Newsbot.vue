@@ -1,10 +1,7 @@
 <template>
   <div class="newsbot">
-    <van-nav-bar title="NewsBot"/>
-
-    <div class="chatbot-content">
-      <BotUi></BotUi>
-    </div>
+    <van-nav-bar title="NewsBot" class="title"/>
+    <BotUi></BotUi>
     <van-popup
         v-model="show_news_dialog"
         position="bottom"
@@ -251,5 +248,13 @@ h3, h6 {
 
 h6 {
   margin: 10px 0;
+}
+.newsbot{
+  height: 2000px;
+}
+.newsbot::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 </style>
