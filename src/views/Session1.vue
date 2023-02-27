@@ -16,26 +16,8 @@
           height="10rem"
           :src="require('../assets/images/guide/person2.png')"
       />
-      <typical
-          class="typicalWrapper"
-          :steps="type_content_s"
-          v-animate-css.once="animationInfinite0"
-          :wrapper="'h2'"
-      ></typical>
-      <div
-          style="width: 90%;margin:10px auto;padding:1em;border:1px solid silver;border-radius:12px;font-weight: bolder;"
-          v-animate-css.once="animationInfinite1">
-        <p style="font-size:1.2em; text-align: left">You will experience three interfaces to read news stories. After
-          each interface, you will answer several questions to provide your feedback on this interface.</p>
-      </div>
-      <typical
-          class="typicalWrapper"
-          :steps="type_content_p"
-          v-animate-css.once="animationInfinite2"
-          :wrapper="'h3'"
-          style="text-align: left"
-      ></typical>
-      <van-radio-group v-model="news_id" v-animate-css.once="animationInfinite3">
+      <h2 v-animate-css.once="animationInfinite0">Please choose a news story you may want to read and then let's start with the first interface.</h2>
+      <van-radio-group v-model="news_id" v-animate-css.once="animationInfinite1">
         <van-cell-group>
           <van-cell v-for="news in news_list" :key="news.id" :title="news.title" clickable @click="news_id = news.id">
             <template #title>
@@ -52,7 +34,7 @@
         </van-cell-group>
       </van-radio-group>
 
-      <div style="margin: 24px 16px;padding-bottom:48px;z-index: 100" v-animate-css.once="animationInfinite3">
+      <div style="margin: 24px 16px;padding-bottom:48px;z-index: 100" v-animate-css.once="animationInfinite2">
         <van-button round block type="info" native-type="submit" :loading="loading" :disabled="disabled" @click="next">
           Let's start！
         </van-button>
@@ -62,27 +44,17 @@
 </template>
 
 <script>
-import typical from "vue-typical";
+
 import {instance} from "@/request";
-import {news_stories} from "@/data/news";
+import {news_stories} from "@/data/news2";
 
 export default {
   name: "Step1",
-  components: {
-    typical,
-  },
   data: function () {
     return {
       news_list: [],
       loading: false,
       news_id: -1,
-      type_content_s: ['', 1500,
-        'Hello!', 500,
-        'Hello！Welcome to this study about a news chatbot.', 1500,
-      ],
-      type_content_p: ['', 9500,
-        'Please choose a news story you may want to read and then let\'s start with the first interface.', 1500,
-      ],
 
       animationInfinite0: {
         classes: 'fadeIn',
@@ -92,13 +64,13 @@ export default {
       },
       animationInfinite1: {
         classes: 'fadeIn',
-        delay: 6500,
-        duration: 2000,
+        delay: 1500,
+        duration: 1000,
         iteration: 1
       },
       animationInfinite2: {
         classes: 'fadeIn',
-        delay: 9500,
+        delay: 2500,
         duration: 1000,
         iteration: 1
       },
@@ -138,7 +110,7 @@ export default {
       }).then((res) => {
         if (res.data.status === 1) {
           localStorage.setItem("active", new Date().getTime().toString());
-          this.$router.replace('/newsbot').catch((err) => {
+          this.$router.replace('/newsbot2').catch((err) => {
             console.log(err.message)
           });
           this.loading = false;

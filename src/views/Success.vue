@@ -6,10 +6,10 @@
           width="200px"
           :src="require('../assets/imgs/finish.png')"
       />
-      <h3>Thank you for completing this survey.</h3>
+      <h3>Thank you for completing this experiment.</h3>
       Completion code:
-      <h3 style="padding: 10px;display:inline-block; background-color: #c8c9cc;border: 1px solid black">CYY6NSN8</h3>
-      <h3>Now you can close this page.</h3>
+      <h3 style="padding: 10px;display:inline-block; background-color: #c8c9cc;border: 1px solid black">{{code.substring(26)}}</h3>
+      <h3>Now let's start the interview.</h3>
     </div>
 
   </div>
@@ -20,7 +20,7 @@ export default {
   name: "Success",
   data: function () {
     return {
-      code: ""
+      code: localStorage.getItem("uuid")
     }
   },
   mounted: function () {

@@ -39,7 +39,7 @@
 import {instance} from "@/request";
 
 export default {
-  name: "Quiz",
+  name: "Quiz2",
   data: function () {
     return {
       loading: false,
@@ -74,7 +74,7 @@ export default {
           localStorage.setItem("active", new Date().getTime().toString());
           this.loading = false;
           if (localStorage.getItem('session_id') === '3') {
-            this.$router.replace('/feedback').catch((err) => {
+            this.$router.replace('/index1').catch((err) => {
               console.log(err.message)
             });
           } else {

@@ -16,12 +16,7 @@
           height="10rem"
           :src="require('../assets/images/guide/person2.png')"
       />
-      <typical
-          class="typicalWrapper"
-          :steps="type_content_s"
-          v-animate-css.once="animationInfinite0"
-          :wrapper="'h2'"
-      ></typical>
+      <h2 v-animate-css.once="animationInfinite0">Good job! Let's see the last interface.</h2>
 
       <div v-animate-css.once="animationInfinite1">
         <p style="text-align: left;font-weight: bold">Please select one of the following news stories that you may want to read.</p>
@@ -55,15 +50,13 @@
 </template>
 
 <script>
-import typical from "vue-typical";
+
 import {instance} from "@/request";
-import {news_stories} from "@/data/news";
+import {news_stories} from "@/data/news2";
 
 export default {
   name: "Step1",
-  components: {
-    typical,
-  },
+
   data: function () {
     return {
       lang: localStorage.getItem("lang"),
@@ -82,19 +75,19 @@ export default {
       },
       animationInfinite1: {
         classes: 'fadeIn',
-        delay: 6000,
+        delay: 2000,
         duration: 1000,
         iteration: 1
       },
       animationInfinite2: {
         classes: 'fadeIn',
-        delay: 7000,
+        delay: 3000,
         duration: 1000,
         iteration: 1
       },
       animationInfinite3: {
         classes: 'fadeIn',
-        delay: 13000,
+        delay: 4000,
         duration: 1000,
         iteration: 1
       },
@@ -127,7 +120,7 @@ export default {
       }).then((res) => {
         if (res.data.status === 1) {
           localStorage.setItem("active", new Date().getTime().toString());
-          this.$router.replace('/newsbot').catch((err) => {
+          this.$router.replace('/newsbot2').catch((err) => {
             console.log(err.message)
           });
           this.loading = false;

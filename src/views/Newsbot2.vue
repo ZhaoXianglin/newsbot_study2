@@ -31,7 +31,7 @@
 // 对象引入
 import {botui} from '@/components/BotUi';
 import BotUi from "../components/BotUi";
-import {news_stories} from "@/data/news";
+import {news_stories} from "@/data/news2";
 
 export default {
   name: "Newsbot",
@@ -107,7 +107,7 @@ export default {
     evaluation: function () {
       this.addTimeLog();
       localStorage.setItem('timeLog', JSON.stringify(this.time_log))
-      this.$router.replace('/evaluate').catch((err) => {
+      this.$router.replace('/evaluate2').catch((err) => {
         console.log(err.message)
       });
     },
@@ -148,7 +148,7 @@ export default {
               }).then(() => {
             this.addTimeLog();
             localStorage.setItem('timeLog', JSON.stringify(this.time_log))
-            this.$router.replace('/evaluate').catch((err) => {
+            this.$router.replace('/evaluate2').catch((err) => {
               console.log(err.message)
             });
           })
@@ -188,7 +188,7 @@ export default {
                 }).then(() => {
               this.addTimeLog()
               localStorage.setItem('timeLog', JSON.stringify(this.time_log))
-              this.$router.replace('/evaluate').catch((err) => {
+              this.$router.replace('/evaluate2').catch((err) => {
                 console.log(err.message)
               });
             })
@@ -248,9 +248,6 @@ h3, h6 {
 
 h6 {
   margin: 10px 0;
-}
-.newsbot{
-  height: 2000px;
 }
 .newsbot::after {
   content: "";
