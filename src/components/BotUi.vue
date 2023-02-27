@@ -2,7 +2,7 @@
   <div class="botui botui-container" v-botui-container>
     <div class="botui-messages-container">
       <div v-for="(msg,index) in messages" :key="index" class="botui-message"
-           :class="msg.cssClass" v-bind="msg.attributes">
+           :class="msg.cssClass" v-botui-scroll v-bind="msg.attributes">
         <transition name="slide-fade">
           <div v-if="msg.visible">
             <div v-if="msg.photo && !msg.loading"
@@ -10,7 +10,7 @@
               <img :src="msg.photo" :class="[{human: msg.human, 'agent':!msg.human}]">
             </div>
             <!--     news card       -->
-            <NewsCard v-if="msg.type==='card'" :news="msg.content" @news_id="click_detail"
+            <NewsCard v-if="msg.type==='card'" :news="msg.content" @news_id="click_detail" v-botui-scroll
                       @next_news="click_next"></NewsCard>
             <CardCarousel v-if="msg.type==='cardlist'" :newslist="msg.content" @news_id="click_detail"></CardCarousel>
             <NewsList v-if="msg.type==='list'" :newslist="msg.content" @news_id="click_detail"></NewsList>
@@ -38,7 +38,7 @@
     </div>
     <div class="botui-actions-container">
       <transition name="slide-fade">
-        <div v-if="action.show">
+        <div v-if="action.show" v-botui-scroll>
           <form v-if="action.type==='text'" class="botui-actions-text"
                 @submit.prevent="handle_action_text()" :class="action.cssClass">
             {{ action }}
@@ -85,7 +85,7 @@
           </form>
           <div v-if="action.type==='button'" class="botui-actions-buttons" :class="action.cssClass">
             <button type="button" :class="button.cssClass" class="botui-actions-buttons-button"
-                     v-for="(button,index) in action.button.buttons" :key="index"
+                    v-for="(button,index) in action.button.buttons" :key="index" v-botui-scroll
                     @click="handle_action_button(button)"><i v-if="button.icon" class="botui-icon
 							botui-action-button-icon fa" :class="'fa-' + button.icon"></i> {{ button.text }}
             </button>
@@ -632,6 +632,14 @@ button.botui-actions-buttons-button {
   z-index: 1;
 }
 
+.chatbot-content {
+  position: absolute;
+  top: 46px;
+  bottom: 54px;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
 
 .help {
   box-sizing: border-box;
