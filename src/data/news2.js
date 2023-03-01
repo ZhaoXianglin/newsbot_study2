@@ -5,7 +5,7 @@ const news_stories = {
             "topic": "mental",
             "title": "Host of genes and genetic variants linked to dyslexia identified",
             "summary": "Research sheds light on hereditary aspect of disorder in largest such study to date",
-            "publish_date": "Thu 20 Oct 2022 16.06 BST",
+            "publish_date": "Mon, 27 Feb 2023 16.06 BST",
             "author": "NicolaKS Davis",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202210241148220.png",
             "buttons": [{
@@ -41,7 +41,7 @@ const news_stories = {
             "topic": "diet",
             "title": "Inaction over lack of exercise will cost £24bn a year globally by 2030, WHO warns",
             "summary": "Exercise could help prevent 500m new cases of diseases such as diabetes, cancer and stroke – but government policies are lagging behind",
-            "publish_date": "Wed 19 Oct 2022 07.15 BST",
+            "publish_date": "Mon, 27 Feb 2023 07.15 BST",
             "author": "Lizzy Davies",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202210241212780.png",
             "buttons": [{
@@ -61,7 +61,7 @@ const news_stories = {
             "topic": "food",
             "title": "Eating These 'Psychobiotic' Foods Can Lower Stress and Improve Sleep, New Study Suggests",
             "summary": "Irish researchers found that eating prebiotic and fermented foods may improve quality of life.",
-            "publish_date": "November 13, 2022 | 8:48 AM",
+            "publish_date": "Mon, 27 Feb 2023 | 8:48 AM",
             "author": "Desirée O",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202211141928019.png",
             "buttons": [{
@@ -87,7 +87,7 @@ const news_stories = {
             "topic": "food",
             "title": "Ultra-processed foods like frozen pizzas, snacks linked to premature death",
             "summary": "A recent study has shown that processed ready-to-eat foods like frozen pizzas, snacks, beans, and canned tuna that seem to save lots of time can be detrimental to health and even steal some years from our lives.",
-            "publish_date": "Sunday Nov 13, 2022",
+            "publish_date": "Mon, 27 Feb 2023",
             "author": "Web Desk",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202211142017917.png",
             "buttons": [{
@@ -113,7 +113,7 @@ const news_stories = {
             "topic": "food",
             "title": "‘Some people need more protein in their diet’ – expert outlines recommended daily intake",
             "summary": "Protein is a key compound in improving health. However, some people can find it difficult to get enough; one expert outlines how.",
-            "publish_date": "09:55, Sat, Nov 12, 2022 ",
+            "publish_date": "Mon, 27 Feb 2023",
             "author": "CHRISTOPHER SHARP",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202211142027902.png",
             "buttons": [{
@@ -141,7 +141,7 @@ const news_stories = {
             "topic": "mental",
             "title": "Bird and birdsong encounters improve mental health, study finds",
             "summary": "Research suggests visits to places with birdlife could be prescribed by doctors to improve mental wellbeing",
-            "publish_date": "Thu 27 Oct 2022 10.00 BST",
+            "publish_date": "Mon, 27 Feb 2023",
             "author": "David Batty",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202211142028680.png",
             "buttons": [{
@@ -166,8 +166,8 @@ const news_stories = {
             "id": 1,
             "topic": "mental",
             "title": "Evening workouts are best for better blood sugar control",
-            "summary": "",
-            "publish_date": "Monday, 14 Nov 202212:00 PM MYT",
+            "summary": "Exercising between noon and midnight may cut insulin resistance by up to a quarter, according to new research.",
+            "publish_date": "Mon, 27 Feb 2023",
             "author": "AGENCY",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202211142105144.png",
             "buttons": [{
@@ -193,7 +193,7 @@ const news_stories = {
             "topic": "mental",
             "title": "Working out can change your brain for the better.",
             "summary": "Exercise alters the brain in a variety of beneficial ways, according to experts.One expert told Insider it can stimulate the part of the brain associated with memory.Exercise can also make the brain more resilient against deterioration as we age.",
-            "publish_date": "Nov 12, 2022, 9:30 PM",
+            "publish_date": "Mon, 27 Feb 2023",
             "author": "Jake Johnson",
             "top_image": "https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/202211142106845.png",
             "buttons": [{
