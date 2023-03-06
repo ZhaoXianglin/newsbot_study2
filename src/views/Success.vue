@@ -10,17 +10,24 @@
       Completion code:
       <h3 style="padding: 10px;display:inline-block; background-color: #c8c9cc;border: 1px solid black">{{code.substring(26)}}</h3>
       <h3>Now let's start the interview. </h3>
+      <vue-qr :text="url"></vue-qr>
     </div>
 
   </div>
 </template>
 
 <script>
+
+import VueQr from "vue-qr";
 export default {
   name: "Success",
+  components: {
+    VueQr
+  },
   data: function () {
     return {
-      code: localStorage.getItem("uuid")
+      code: localStorage.getItem("uuid"),
+      url: "https://newsbot3.vercel.app/#/info/uuid/" + localStorage.getItem("uuid")
     }
   },
   mounted: function () {

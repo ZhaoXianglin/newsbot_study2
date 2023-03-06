@@ -14,6 +14,8 @@ import Session5 from "@/views/Session5";
 import Session6 from "@/views/Session6";
 import Quiz2 from "@/views/Quiz2";
 import Quiz1 from "@/views/Quiz1";
+import Calibration from "@/views/calibration.vue";
+import Demographic from "@/views/Demographic.vue";
 
 Vue.use(VueRouter)
 
@@ -22,6 +24,21 @@ const routes = [
         path: '/',
         name: 'Homepage',
         component: Index2
+    },
+    {
+        path: '/calibration',
+        name: 'calibration',
+        component: Calibration
+    },
+    {
+        path: '/info/uuid/:uuid',
+        name: 'Demographic',
+        component: Demographic
+    },
+    {
+        path: '/feedback',
+        name: 'Feedback',
+        component: Feedback
     },
     {
         path: '/session1',
@@ -62,11 +79,6 @@ const routes = [
         path: '/newsbot1',
         name: 'newsbot1',
         component: Newsbot1
-    },
-    {
-        path: '/feedback',
-        name: 'feedback',
-        component: Feedback
     },
     {
         path: '/evaluate2',

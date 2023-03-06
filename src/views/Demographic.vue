@@ -231,8 +231,10 @@
         </template>
       </van-field>
 
-      <p style="padding:0 10px;font-weight:bold;text-align: left">For each statement below, please indicate how much you agree..</p>
-      <p style="padding:0 10px;font-weight:normal; text-align: left;font-size: 14px">ranging from “extremely uncharacteristic of me” (1) to “extremely characteristic of me(5)” </p>
+      <p style="padding:0 10px;font-weight:bold;text-align: left">For each statement below, please indicate how much you
+        agree..</p>
+      <p style="padding:0 10px;font-weight:normal; text-align: left;font-size: 14px">ranging from “extremely
+        uncharacteristic of me” (1) to “extremely characteristic of me(5)” </p>
       <van-field v-for="(value, key,index) in nfc" :key="key" :name="key"
                  :rules="[{ required: auth, message: 'required' }]">
         <template #input>
@@ -241,7 +243,8 @@
               <van-col span="24"><span style="font-weight:600">{{ index + 1 }}. {{ value }}</span></van-col>
             </van-row>
             <van-row type="flex" align="center" justify="between">
-              <van-col span="4" class="score_left_s" style="text-align:right;">extremely uncharacteristic of me</van-col>
+              <van-col span="4" class="score_left_s" style="text-align:right;">extremely uncharacteristic of me
+              </van-col>
               <van-col>
                 <van-radio-group v-model="q2groupans[index]" direction="horizontal" class="matrix_table">
                   <van-radio :name="val" v-for="val in 5" :key="val" checked-color="#ee0a24" class="item">
@@ -291,12 +294,13 @@
 
 <script>
 import {instance} from '@/request';
-import {pre_study_questions} from "@/data/questions";
+import {pre_study_questions} from "@/data/questions2";
 
 export default {
   name: "Demographic",
   data: function () {
     return {
+      uuid: "",
       loading: false,
       auth: true,
       gender: "",
@@ -313,6 +317,16 @@ export default {
       q1groupans: Array(7).fill(null),
       q2groupans: Array(6).fill(null),
       q3groupans: Array(10).fill(null),
+    }
+  },
+  mounted() {
+    this.uuid = this.$route.params.uuid
+    if (this.uuid === "") {
+      this.$dialog.alert({
+        message: "Can not obtain UUID",
+      });
+    } else {
+      localStorage.setItem("uuid", this.uuid)
     }
   },
   methods: {
@@ -336,7 +350,7 @@ export default {
           localStorage.setItem("active", new Date().getTime().toString());
 
           this.loading = false;
-          this.$router.replace('/session1')
+          this.$router.replace('/feedback')
         } else {
           this.loading = false;
           this.$toast("Please read and accept the informed consent first.")

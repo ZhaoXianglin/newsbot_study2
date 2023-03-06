@@ -9,42 +9,6 @@
       <van-step>Step5</van-step>
     </van-steps>
     <van-form @submit="onSubmit" scroll-to-error @failed="onFailed" validate-trigger="onSubmit">
-      <van-image src="https://obsidian-1251052535.cos.ap-hongkong.myqcloud.com/imgs/Slice.png"></van-image>
-      <van-field :rules="[{ required: auth, message: 'required' }]" name="feedback1">
-        <template #input>
-          <van-row style="width: 100%;">
-            <van-row type="flex">
-              <van-col span="24"><span
-                  style="font-weight:600">1. Which interface do you prefer regarding the reading of a news story?</span>
-              </van-col>
-              <van-col span="24">
-                <van-radio-group v-model="feedback1">
-                  <van-radio name="pop-up webview" checked-color="#ee0a24" class="item">
-                    Mostly A (pop-up webview)
-                  </van-radio>
-                  <van-radio name="in conversation" checked-color="#ee0a24" class="item">
-                    Mostly B (in conversation)
-                  </van-radio>
-                  <van-radio name="question driven" checked-color="#ee0a24" class="item">
-                    Mostly C (question driven)
-                  </van-radio>
-                </van-radio-group>
-              </van-col>
-            </van-row>
-          </van-row>
-        </template>
-      </van-field>
-      <p style="padding:0 10px;font-weight:bold;text-align: left">2. Why do you prefer <span style="color: #1989fa">'{{feedback1}}'</span> to other interfaces?</p>
-      <van-field
-          name="feedback2"
-          v-model="feedback2"
-          rows="4"
-          autosize
-          type="textarea"
-          placeholder="please enter"
-          :rules="[{ required: auth, message: 'required' }]"
-      />
-      <van-divider></van-divider>
       <van-field :rules="[{ required: auth, message: 'required' }]" name="feedback3">
         <template #input>
           <van-row style="width: 100%;">
