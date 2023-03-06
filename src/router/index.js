@@ -16,6 +16,7 @@ import Quiz2 from "@/views/Quiz2";
 import Quiz1 from "@/views/Quiz1";
 import Calibration from "@/views/calibration.vue";
 import Demographic from "@/views/Demographic.vue";
+import Finish from "@/views/Finish.vue";
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
         path: '/feedback',
         name: 'Feedback',
         component: Feedback
+    },
+    {
+        path: '/finish',
+        name: 'Finish',
+        component: Finish
     },
     {
         path: '/session1',

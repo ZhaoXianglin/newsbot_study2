@@ -286,7 +286,7 @@
       </van-field>
 
       <div style="margin: 36px;">
-        <van-button round block type="info" native-type="submit" :loading="loading">Continue</van-button>
+        <van-button round block type="info" native-type="submit" :loading="loading">Submit</van-button>
       </div>
     </van-form>
   </div>
