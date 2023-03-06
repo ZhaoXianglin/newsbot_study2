@@ -64,7 +64,7 @@ export default {
         localStorage.setItem('active', new Date().getTime().toString());
         localStorage.setItem('step', '0');
         localStorage.setItem("active", new Date().getTime().toString());
-        this.$router.replace('/session1').catch((err) => {
+        this.$router.replace('/calibration').catch((err) => {
           console.log(err.message)
         });
         this.loading1 = false;
