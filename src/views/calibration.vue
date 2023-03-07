@@ -93,7 +93,7 @@ html, body {
 
 .calibration {
   width: 100%;
-  height: 790px;
+  height: 760px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
