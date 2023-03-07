@@ -8,7 +8,7 @@
       <ul>
         <li>Use three different interfaces to browse the news stories in the chatbot.</li>
         <li>Fill out a questionnaire to evaluate each interface based on your experience.</li>
-        <li>Please follow the instructions of the experimenter.</li>
+        <li>Please follow the instructions of the interviewer.</li>
       </ul>
 
       <h4>Duration:</h4>
