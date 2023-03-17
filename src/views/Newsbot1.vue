@@ -14,9 +14,10 @@
         close-icon="close"
         position="bottom"
         round
+        @opened="popup_scrollTop"
         :style="{ height: '90%',width:'100%' }"
     >
-      <div class="news_content" v-if="interface_id">
+      <div class="news_content" v-if="interface_id" ref="news">
         <h3>{{ news_group[click_news_id].title }}</h3>
         <h6>By: {{ news_group[click_news_id].author }} <br> {{ news_group[click_news_id].publish_date }}</h6>
         <p class="abstract">{{ news_group[click_news_id].summary }}</p>
@@ -60,6 +61,9 @@ export default {
     this.init();
   },
   methods: {
+    popup_scrollTop: function (){
+      this.$refs.news.scrollTop = 0
+    },
     init: function () {
       this.news_type = localStorage.getItem("news_type");
       this.news_list = News_stories[this.news_type];
@@ -93,7 +97,6 @@ export default {
     show_news: function (id) {
       this.click_news_id = id - 1;
       this.show_news_dialog = true;
-      console.log(this.click_news_id)
     },
     show_next: function () {
       if (this.current_news_id !== 2) {
